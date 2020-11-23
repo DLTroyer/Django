@@ -1,0 +1,16 @@
+{% entexds "learning_logs/basehtml" %}
+
+{% block content %}
+
+    <p>Topics</p>
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{% url 'learning_logs:topic' topics.id %}">{{ topic }}</a></li>
+        {% empty %}
+            <li>Not topics have been added yet.</li>
+        {% endfor %}    
+    </ul>
+
+<a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
+
+{% endblock content %}
